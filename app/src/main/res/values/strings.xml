@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">MeteoDenik</string>
-    <string name="nadpis">Meteo deník — Roman Vilčák</string>
-    <string name="tlacitko">Klikni</string>
-    <string name="pocet_kliknuti">Počet kliknutí: %1$d</string>
+    <string name="seznam_titulek">Meteo deník — Roman Vilčák</string>
+    <string name="otevri_detail">Otevřít detail města</string>
+    <string name="mesto_nezname">Neznámé město</string>
+    <string name="sdilet_zaznam">Sdílet záznam</string>
+    <string name="sdileny_text">%1$s: %2$.1f °C — zapsáno v MeteoDeníku</string>
+    <string name="teplota_format">%1$.1f °C</string>
+    <string name="teplota_chybi">Teplota není k dispozici</string>
+    <string name="poslat_zpravu">Zapsat záznam</string>
 </resources>
