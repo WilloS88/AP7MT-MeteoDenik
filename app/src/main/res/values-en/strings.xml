@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Weather Diary</string>
+    <string name="seznam_titulek_pocet">My cities — %1$s</string>
+    <string name="otevri_detail">Open city detail</string>
+    <string name="mesto_nezname">Unknown city</string>
+    <string name="sdilet_zaznam">Share entry</string>
+    <string name="sdileny_text">%1$s: %2$.1f °C — recorded in Weather Diary</string>
+    <string name="teplota_format">%1$.1f °C</string>
+    <string name="teplota_chybi">Temperature not available</string>
+    <string name="poslat_zpravu">Save entry</string>
+
+    <plurals name="pocet_zaznamu">
+        <item quantity="one">%1$d entry</item>
+        <item quantity="other">%1$d entries</item>
+    </plurals>
+
+    <string name="poloha_zjistit">Find my location</string>
+    <string name="poloha_vysvetleni">We need your approximate location to offer you the weather in the city you are in right now. We never ask for precise or background location.</string>
+    <string name="poloha_pokracovat">Continue</string>
+    <string name="poloha_povolena">Location is allowed</string>
+    <string name="poloha_bez_opravneni">Without location permission, pick the city yourself.</string>
+    <string name="otevrit_nastaveni">Open settings</string>
+    <string name="poloha_souradnice">Latitude %1$.4f · longitude %2$.4f</string>
+    <string name="poloha_neznama">The last location is not known yet.</string>
+    <string name="poloha_stav">Card state: %1$s</string>
+</resources>

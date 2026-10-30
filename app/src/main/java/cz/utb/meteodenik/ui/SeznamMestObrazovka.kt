@@ -1,6 +1,7 @@
 package cz.utb.meteodenik.ui
 
 import android.content.Intent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -15,6 +16,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -35,16 +38,22 @@ fun SeznamMestObrazovka(modifier: Modifier = Modifier) {
     val context = LocalContext.current
 
     Column(modifier = modifier.padding(16.dp)) {
+        val pocet = UKAZKOVA_MESTA.size
         Text(
-            text = stringResource(R.string.seznam_titulek),
+            text = stringResource(
+                R.string.seznam_titulek_pocet,
+                pluralStringResource(R.plurals.pocet_zaznamu, pocet, pocet)
+            ),
             color = MaterialTheme.colorScheme.primary,
             style = MaterialTheme.typography.headlineSmall
         )
-        Spacer(Modifier.height(8.dp))
+
+        PolohaKarta(onPolohaPovolena = {})
 
         UKAZKOVA_MESTA.forEach { mesto ->
             Row(
                 modifier = Modifier
+                    .background(colorResource(R.color.pozadi_karty))
                     .fillMaxWidth()
                     .clickable(onClickLabel = stringResource(R.string.otevri_detail)) {
                         val intent = Intent(context, DetailMestaActivity::class.java).apply {
@@ -57,7 +66,10 @@ fun SeznamMestObrazovka(modifier: Modifier = Modifier) {
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(text = mesto.nazev)
-                Text(text = stringResource(R.string.teplota_format, mesto.teplota))
+                Text(
+                    text = stringResource(R.string.teplota_format, mesto.teplota),
+                    color = colorResource(R.color.text_zvyrazneni)
+                )
             }
         }
 
