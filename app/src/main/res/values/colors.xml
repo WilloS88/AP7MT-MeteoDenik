@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Lekce 06: tmavá varianta je ve values-night/colors.xml -->
+    <color name="pozadi_karty">#FFE8F1FB</color>
+    <color name="text_zvyrazneni">#FF0B57D0</color>
+
+    <!-- Pozadí adaptivní ikony -->
+    <color name="ic_launcher_background">#FF0B57D0</color>
 </resources>

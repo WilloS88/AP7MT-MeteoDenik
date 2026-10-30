@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">MeteoDenik</string>
-    <string name="seznam_titulek">Meteo deník — Roman Vilčák</string>
+    <string name="app_name">MeteoDeník</string>
+    <string name="seznam_titulek_pocet">Moje města — %1$s</string>
     <string name="otevri_detail">Otevřít detail města</string>
     <string name="mesto_nezname">Neznámé město</string>
     <string name="sdilet_zaznam">Sdílet záznam</string>
@@ -8,4 +8,21 @@
     <string name="teplota_format">%1$.1f °C</string>
     <string name="teplota_chybi">Teplota není k dispozici</string>
     <string name="poslat_zpravu">Zapsat záznam</string>
+
+    <plurals name="pocet_zaznamu">
+        <item quantity="one">%1$d záznam</item>
+        <item quantity="few">%1$d záznamy</item>
+        <item quantity="many">%1$d záznamu</item>
+        <item quantity="other">%1$d záznamů</item>
+    </plurals>
+
+    <string name="poloha_zjistit">Zjistit polohu</string>
+    <string name="poloha_vysvetleni">Přibližnou polohu potřebujeme, abychom vám nabídli počasí ve městě, kde právě jste. Přesnou polohu ani polohu na pozadí nežádáme.</string>
+    <string name="poloha_pokracovat">Pokračovat</string>
+    <string name="poloha_povolena">Poloha je povolena</string>
+    <string name="poloha_bez_opravneni">Bez oprávnění k poloze vyberte město ručně.</string>
+    <string name="otevrit_nastaveni">Otevřít nastavení</string>
+    <string name="poloha_souradnice">Šířka %1$.4f · délka %2$.4f</string>
+    <string name="poloha_neznama">Poslední poloha zatím není známá.</string>
+    <string name="poloha_stav">Stav karty: %1$s</string>
 </resources>

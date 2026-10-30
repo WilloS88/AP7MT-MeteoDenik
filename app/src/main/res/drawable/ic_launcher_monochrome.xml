@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Silueta teploměru pro tematizované ikony (Android 13+). Rtuť je vyříznutá. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M48,32 A6,6 0 0 1 60,32 L60,63.5 A12,12 0 1 1 48,63.5 Z M52,42 A2,2 0 0 1 56,42 L56,66.5 A8,8 0 1 1 52,66.5 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M63,38h4v2h-4z M63,46h4v2h-4z M63,54h4v2h-4z" />
+</vector>
