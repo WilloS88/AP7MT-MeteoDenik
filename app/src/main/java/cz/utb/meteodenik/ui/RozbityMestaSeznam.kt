@@ -28,12 +28,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import cz.utb.meteodenik.R
 
-// Cvičení 7.6 – opravená verze. Rozbor chyb: docs/lekce-07-debug.md
-
 @Composable
 fun RozbityMestaSeznam(modifier: Modifier = Modifier) {
 
-    // Oprava A: sledovaný stav místo obyčejné proměnné
     var novyNazev by rememberSaveable { mutableStateOf("") }
     var mesta by remember { mutableStateOf(listOf("Zlín", "Brno", "Ostrava", "Olomouc")) }
 
@@ -42,26 +39,24 @@ fun RozbityMestaSeznam(modifier: Modifier = Modifier) {
         OutlinedTextField(
             value = novyNazev,
             onValueChange = { novyNazev = it },
-            label = { Text(stringResource(R.string.mesto_pole_label)) },   // oprava D
+            label = { Text(stringResource(R.string.mesto_pole_label)) },
             singleLine = true,
             modifier = Modifier.fillMaxWidth()
         )
 
         Button(onClick = {
             val nazev = novyNazev.trim()
-            // Název je zároveň klíčem v LazyColumn (oprava C), dva stejné by aplikaci shodily.
             if (nazev.isNotEmpty() && mesta.none { it.equals(nazev, ignoreCase = true) }) {
                 mesta = mesta + nazev
                 novyNazev = ""
             }
         }) {
-            Text(stringResource(R.string.mesto_pridat))   // oprava D
+            Text(stringResource(R.string.mesto_pridat))
         }
 
         Text(
-            text = pluralStringResource(R.plurals.mesta_pocet, mesta.size, mesta.size),   // oprava D
+            text = pluralStringResource(R.plurals.mesta_pocet, mesta.size, mesta.size),
             style = MaterialTheme.typography.labelLarge,
-            // Oprava B: vnější okraj → barva → vnitřní odsazení; text uvnitř plošky „dýchá“
             modifier = Modifier
                 .padding(vertical = 8.dp)
                 .background(MaterialTheme.colorScheme.secondaryContainer, MaterialTheme.shapes.small)
@@ -69,7 +64,6 @@ fun RozbityMestaSeznam(modifier: Modifier = Modifier) {
         )
 
         LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            // Oprava C: klíč váže stav „rozbaleno“ na město, ne na pozici v seznamu
             items(items = mesta, key = { nazev -> nazev }) { nazev ->
                 var rozbaleno by remember { mutableStateOf(false) }
 
@@ -82,12 +76,12 @@ fun RozbityMestaSeznam(modifier: Modifier = Modifier) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Text(text = nazev, modifier = Modifier.weight(1f))
                             TextButton(onClick = { mesta = mesta - nazev }) {
-                                Text(stringResource(R.string.mesto_smazat))   // oprava D
+                                Text(stringResource(R.string.mesto_smazat))
                             }
                         }
                         if (rozbaleno) {
                             Text(
-                                text = stringResource(R.string.mesto_teplota_neznama),   // oprava D
+                                text = stringResource(R.string.mesto_teplota_neznama),
                                 style = MaterialTheme.typography.bodySmall
                             )
                         }

@@ -65,7 +65,6 @@ fun VizitkaKarta(
 
             Spacer(modifier = Modifier.width(16.dp))
 
-            // weight(1f): sloupec zabere zbytek řádku a dlouhý text se zlomí uvnitř karty
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = jmeno,
@@ -90,7 +89,6 @@ fun VizitkaKarta(
     }
 }
 
-/** „Roman Vilčák“ → „RV“; nejvýš dvě písmena. */
 private fun inicialy(jmeno: String): String =
     jmeno.split(" ")
         .filter { it.isNotBlank() }
@@ -105,7 +103,7 @@ private fun VizitkaKartaPreview() {
     MeteoDenikTheme {
         VizitkaKarta(
             jmeno = "Roman Vilčák",
-            obor = "Informační technologie · 3. ročník",   // nezlomitelná mezera: „3.“ a „ročník“ zůstanou na jednom řádku
+            obor = "Informační technologie · 4. ročník",
             email = "r_vilcak@utb.cz",
             modifier = Modifier.padding(16.dp)
         )

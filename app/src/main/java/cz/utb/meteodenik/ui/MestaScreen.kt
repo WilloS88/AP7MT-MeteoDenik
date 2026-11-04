@@ -50,12 +50,10 @@ import cz.utb.meteodenik.R
 import cz.utb.meteodenik.model.Mesto
 import cz.utb.meteodenik.ui.theme.MeteoDenikTheme
 
-// ---------- C: karta jednoho města ----------
-
 @Composable
 fun MestoKarta(
     mesto: Mesto,
-    onSmazat: () -> Unit,   // karta neví, jak se maže – jen ohlásí, že o to uživatel požádal
+    onSmazat: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Card(modifier = modifier.fillMaxWidth()) {
@@ -98,7 +96,6 @@ fun MestoKarta(
                 )
             }
 
-            // IconButton má cíl dotyku 48 dp; samotná Icon s clickable by ho neměla.
             IconButton(onClick = onSmazat) {
                 Icon(
                     painter = painterResource(R.drawable.ic_smazat),
@@ -123,8 +120,6 @@ private fun MestoKartaPreview() {
         MestoKarta(mesto = ukazkovaMesta.first(), onSmazat = {}, modifier = Modifier.padding(16.dp))
     }
 }
-
-// ---------- D: řádek pro přidání města (bez stavu) ----------
 
 @Composable
 fun PridatMestoRadek(
@@ -175,8 +170,6 @@ private fun PridatMestoRadekPreview() {
     }
 }
 
-// ---------- E: seznam s LazyColumn a prázdný stav ----------
-
 @Composable
 fun MestaSeznam(
     mesta: List<Mesto>,
@@ -200,14 +193,11 @@ fun MestaSeznam(
                 items = mesta,
                 key = { mesto -> mesto.id }
             ) { mesto ->
-                // id doplní až seznam – karta zná jen „smaž mě“
                 MestoKarta(mesto = mesto, onSmazat = { onSmazatMesto(mesto.id) })
             }
         }
     }
 }
-
-// ---------- F: složení obrazovky ----------
 
 @OptIn(ExperimentalMaterial3Api::class)   // TopAppBar je v Material 3 stále experimentální
 @Composable
@@ -269,12 +259,11 @@ fun MestaObrazovka(modifier: Modifier = Modifier) {
         jeDuplikat = jeDuplikat,
         onNovyNazevChange = {
             novyNazev = it
-            jeDuplikat = false   // chyba platí jen pro text, který ji způsobil
+            jeDuplikat = false
         },
         onPridatMesto = {
             val nazev = novyNazev.trim()
             if (nazev.isNotEmpty()) {
-                // „ brno “ i „BRNO“ jsou totéž město jako „Brno“
                 if (mesta.any { it.nazev.trim().equals(nazev, ignoreCase = true) }) {
                     jeDuplikat = true
                 } else {
@@ -288,7 +277,7 @@ fun MestaObrazovka(modifier: Modifier = Modifier) {
             }
         },
         onSmazatMesto = { id ->
-            mesta = mesta.filterNot { it.id == id }   // opět nový seznam, ne remove()
+            mesta = mesta.filterNot { it.id == id }
         },
         modifier = modifier
     )
