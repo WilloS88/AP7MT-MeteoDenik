@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">MeteoDeník</string>
+    <string name="mesta_titulek">Moje města</string>
+    <string name="mesta_prazdno">Zatím tu není žádné město. Přidejte první.</string>
+    <string name="mesto_pole_label">Název města</string>
+    <string name="mesto_pridat">Přidat</string>
+    <string name="mesto_teplota">%1$.1f °C</string>
+    <string name="mesto_teplota_neznama">Teplotu zatím neznáme</string>
+    <string name="mesto_avatar_popis">Značka města</string>
     <string name="seznam_titulek_pocet">Moje města — %1$s</string>
     <string name="otevri_detail">Otevřít detail města</string>
     <string name="mesto_nezname">Neznámé město</string>

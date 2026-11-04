@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Weather Diary</string>
+    <string name="mesta_titulek">My cities</string>
+    <string name="mesta_prazdno">No cities yet. Add the first one.</string>
+    <string name="mesto_pole_label">City name</string>
+    <string name="mesto_pridat">Add</string>
+    <string name="mesto_teplota">%1$.1f °C</string>
+    <string name="mesto_teplota_neznama">Temperature not known yet</string>
+    <string name="mesto_avatar_popis">City badge</string>
     <string name="seznam_titulek_pocet">My cities — %1$s</string>
     <string name="otevri_detail">Open city detail</string>
     <string name="mesto_nezname">Unknown city</string>
