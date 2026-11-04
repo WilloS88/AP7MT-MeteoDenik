@@ -9,6 +9,7 @@
     <string name="mesto_avatar_popis">City badge</string>
     <string name="mesto_duplikat">This city is already in your list.</string>
     <string name="mesto_smazat_popis">Delete city %1$s</string>
+    <string name="mesto_smazat">Delete</string>
     <plurals name="mesta_pocet">
         <item quantity="one">%1$d city</item>
         <item quantity="other">%1$d cities</item>

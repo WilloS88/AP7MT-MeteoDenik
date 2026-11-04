@@ -19,15 +19,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import cz.utb.meteodenik.R
 
 @Composable
 fun RozbityMestaSeznam(modifier: Modifier = Modifier) {
 
-    var novyNazev = ""
+    var novyNazev by rememberSaveable { mutableStateOf("") }
     var mesta by remember { mutableStateOf(listOf("Zlín", "Brno", "Ostrava", "Olomouc")) }
 
     Column(modifier = modifier.padding(16.dp)) {
@@ -35,30 +39,32 @@ fun RozbityMestaSeznam(modifier: Modifier = Modifier) {
         OutlinedTextField(
             value = novyNazev,
             onValueChange = { novyNazev = it },
-            label = { Text("Název města") },
+            label = { Text(stringResource(R.string.mesto_pole_label)) },
             singleLine = true,
             modifier = Modifier.fillMaxWidth()
         )
 
         Button(onClick = {
-            if (novyNazev.isNotBlank()) {
-                mesta = mesta + novyNazev
+            val nazev = novyNazev.trim()
+            if (nazev.isNotEmpty() && mesta.none { it.equals(nazev, ignoreCase = true) }) {
+                mesta = mesta + nazev
                 novyNazev = ""
             }
         }) {
-            Text("Přidat")
+            Text(stringResource(R.string.mesto_pridat))
         }
 
         Text(
-            text = "Počet měst: ${mesta.size}",
+            text = pluralStringResource(R.plurals.mesta_pocet, mesta.size, mesta.size),
             style = MaterialTheme.typography.labelLarge,
             modifier = Modifier
-                .padding(8.dp)
-                .background(MaterialTheme.colorScheme.secondaryContainer)
+                .padding(vertical = 8.dp)
+                .background(MaterialTheme.colorScheme.secondaryContainer, MaterialTheme.shapes.small)
+                .padding(horizontal = 12.dp, vertical = 6.dp)
         )
 
         LazyColumn(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            items(mesta) { nazev ->
+            items(items = mesta, key = { nazev -> nazev }) { nazev ->
                 var rozbaleno by remember { mutableStateOf(false) }
 
                 Card(
@@ -70,12 +76,12 @@ fun RozbityMestaSeznam(modifier: Modifier = Modifier) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Text(text = nazev, modifier = Modifier.weight(1f))
                             TextButton(onClick = { mesta = mesta - nazev }) {
-                                Text("Smazat")
+                                Text(stringResource(R.string.mesto_smazat))
                             }
                         }
                         if (rozbaleno) {
                             Text(
-                                text = "Teplotu doplníme v lekci 11",
+                                text = stringResource(R.string.mesto_teplota_neznama),
                                 style = MaterialTheme.typography.bodySmall
                             )
                         }
