@@ -10,6 +10,8 @@
     <string name="mesto_duplikat">Toto město už v seznamu máte.</string>
     <string name="mesto_smazat_popis">Smazat město %1$s</string>
     <string name="mesto_smazat">Smazat</string>
+    <string name="detail_zpet">Zpět</string>
+    <string name="detail_nenalezeno">Město se nepodařilo najít.</string>
     <plurals name="mesta_pocet">
         <item quantity="one">%1$d město</item>
         <item quantity="few">%1$d města</item>
