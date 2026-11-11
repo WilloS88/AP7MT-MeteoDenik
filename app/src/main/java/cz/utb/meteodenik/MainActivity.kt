@@ -7,7 +7,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.content.ContextCompat
-import cz.utb.meteodenik.ui.MestaObrazovka
+import cz.utb.meteodenik.ui.mesta.SeznamMestObrazovka
 import cz.utb.meteodenik.ui.theme.MeteoDenikTheme
 
 private const val TAG = "Cyklus"
@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MeteoDenikTheme {
-                MestaObrazovka()
+                SeznamMestObrazovka(onMestoKliknuto = { })
             }
         }
     }
