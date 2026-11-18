@@ -3,6 +3,7 @@ package cz.utb.meteodenik.data
 import kotlinx.serialization.SerializationException
 import retrofit2.HttpException
 import java.io.IOException
+import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 import java.time.format.DateTimeParseException
@@ -14,6 +15,8 @@ internal suspend fun <T> bezpecneVolani(blok: suspend () -> T): VysledekSite<T> 
     } catch (e: CancellationException) {
         throw e
     } catch (e: UnknownHostException) {
+        VysledekSite.Selhani(DuvodSelhani.BEZ_PRIPOJENI)
+    } catch (e: ConnectException) {
         VysledekSite.Selhani(DuvodSelhani.BEZ_PRIPOJENI)
     } catch (e: SocketTimeoutException) {
         VysledekSite.Selhani(DuvodSelhani.SERVER_NEODPOVIDA)

@@ -1,0 +1,20 @@
+### A letadlovy rezim
+<-- HTTP FAILED: java.net.ConnectException: Failed to connect to api.open-meteo.com/157.90.83.168:443. https://api.open-meteo.com/v1/forecast?latitude
+<-- HTTP FAILED: java.net.UnknownHostException: Unable to resolve host "api.open-meteo.com": No address associated with hostname. https://api.open-met
+<-- HTTP FAILED: java.net.UnknownHostException: Unable to resolve host "api.open-meteo.com": No address associated with hostname. https://api.open-met
+
+### B readTimeout 1 ms
+<-- HTTP FAILED: java.net.SocketTimeoutException: Read timed out. https://api.open-meteo.com/v1/forecast?latitude=49.1951&longitude=16.6068&current=temperature_2m%2Crelat
+<-- HTTP FAILED: java.net.SocketTimeoutException: Read timed out. https://api.open-meteo.com/v1/forecast?latitude=49.8209&longitude=18.2625&current=temperature_2m%2Crelat
+<-- HTTP FAILED: java.net.SocketTimeoutException: Read timed out. https://api.open-meteo.com/v1/forecast?latitude=49.2265&longitude=17.6683&current=temperature_2m%2Crelat
+
+### C cesta v1/neexistuje
+<-- 404 Not Found https://api.open-meteo.com/v1/neexistuje?latitude=49.2265&longitude=17.6683&current=temperature_2m%2Crelative_humidity_2m%2Cweather_code%2Cwind_speed_10
+<-- 404 Not Found https://api.open-meteo.com/v1/neexistuje?latitude=49.1951&longitude=16.6068&current=temperature_2m%2Crelative_humidity_2m%2Cweather_code%2Cwind_speed_10
+<-- 404 Not Found https://api.open-meteo.com/v1/neexistuje?latitude=49.8209&longitude=18.2625&current=temperature_2m%2Crelative_humidity_2m%2Cweather_code%2Cwind_speed_10
+
+### D pole temperature_2m prejmenovano na temp
+<-- 200 OK https://api.open-meteo.com/v1/forecast?latitude=49.2265&longitude=17.6683&current=temperature_2m%2Crelative_humidity_2m%2Cweather_code%2Cwind_speed_10m&timezon
+<-- 200 OK https://api.open-meteo.com/v1/forecast?latitude=49.1951&longitude=16.6068&current=temperature_2m%2Crelative_humidity_2m%2Cweather_code%2Cwind_speed_10m&timezon
+<-- 200 OK https://api.open-meteo.com/v1/forecast?latitude=49.8209&longitude=18.2625&current=temperature_2m%2Crelative_humidity_2m%2Cweather_code%2Cwind_speed_10m&timezon
+
