@@ -1,11 +1,17 @@
 package cz.utb.meteodenik.ui.mesta
 
+import cz.utb.meteodenik.data.DuvodSelhani
 import cz.utb.meteodenik.model.Mesto
+import cz.utb.meteodenik.model.MeteoZaznam
+
+data class MestoSPocasim(
+    val mesto: Mesto,
+    val pocasi: MeteoZaznam? = null
+)
 
 data class MestaUiState(
-    val mesta: List<Mesto> = emptyList(),
+    val mesta: List<MestoSPocasim> = emptyList(),
     val vybraneMestoId: Int? = null,
-    val jeDuplikat: Boolean = false,
     val nacitaSe: Boolean = false,
-    val chyba: Int? = null
+    val chyba: DuvodSelhani? = null
 )

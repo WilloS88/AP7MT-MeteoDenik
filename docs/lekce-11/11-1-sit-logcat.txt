@@ -1,0 +1,15 @@
+I OkHttp  : --> GET https://api.open-meteo.com/v1/forecast?latitude=49.2265&longitude=17.6683&current=temperature_2m%2Crelative_humidity_2m%2Cweather_code%2Cwind_speed_10m&timezone=auto
+I OkHttp  : --> END GET
+I OkHttp  : <-- 200 OK https://api.open-meteo.com/v1/forecast?latitude=49.2265&longitude=17.6683&current=temperature_2m%2Crelative_humidity_2m%2Cweather_code%2Cwind_speed_10m&timezone=auto (992ms)
+I OkHttp  : Content-Type: application/json; charset=utf-8
+I OkHttp  : <-- END HTTP (994ms, 482-byte body)
+I OkHttp  : --> GET https://api.open-meteo.com/v1/forecast?latitude=49.1951&longitude=16.6068&current=temperature_2m%2Crelative_humidity_2m%2Cweather_code%2Cwind_speed_10m&timezone=auto
+I OkHttp  : --> END GET
+I OkHttp  : <-- 200 OK https://api.open-meteo.com/v1/forecast?latitude=49.1951&longitude=16.6068&current=temperature_2m%2Crelative_humidity_2m%2Cweather_code%2Cwind_speed_10m&timezone=auto (143ms)
+I OkHttp  : Content-Type: application/json; charset=utf-8
+I OkHttp  : <-- END HTTP (147ms, 482-byte body)
+I OkHttp  : --> GET https://api.open-meteo.com/v1/forecast?latitude=49.8209&longitude=18.2625&current=temperature_2m%2Crelative_humidity_2m%2Cweather_code%2Cwind_speed_10m&timezone=auto
+I OkHttp  : --> END GET
+I OkHttp  : <-- 200 OK https://api.open-meteo.com/v1/forecast?latitude=49.8209&longitude=18.2625&current=temperature_2m%2Crelative_humidity_2m%2Cweather_code%2Cwind_speed_10m&timezone=auto (100ms)
+I OkHttp  : Content-Type: application/json; charset=utf-8
+I OkHttp  : <-- END HTTP (103ms, 482-byte body)
