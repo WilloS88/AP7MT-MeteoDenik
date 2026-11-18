@@ -12,6 +12,15 @@
     <string name="mesto_smazat">Delete</string>
     <string name="detail_zpet">Back</string>
     <string name="detail_nenalezeno">The city could not be found.</string>
+    <string name="chyba_bez_pripojeni">You are not connected to the internet. Check your Wi-Fi or mobile data.</string>
+    <string name="chyba_server_neodpovida">The server is not responding. Please try again in a moment.</string>
+    <string name="chyba_prilis_mnoho_dotazu">You have reached the request limit. Try again in a minute.</string>
+    <string name="chyba_pozadavku">The data could not be loaded. Try removing the city and adding it again.</string>
+    <string name="chyba_serveru">The data provider is having problems. Please try again later.</string>
+    <string name="chyba_neplatna_odpoved">The server sent an unexpected response. If you are on public Wi-Fi, sign in to it.</string>
+    <string name="chyba_jina_site">The connection could not be completed.</string>
+    <string name="akce_zkusit_znovu">Try again</string>
+    <string name="akce_obnovit">Refresh</string>
     <plurals name="mesta_pocet">
         <item quantity="one">%1$d city</item>
         <item quantity="other">%1$d cities</item>
